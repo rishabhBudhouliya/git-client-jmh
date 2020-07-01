@@ -11,5 +11,10 @@ pipeline {
                 sh 'mvn -DskipTests clean install' 
             }
         }
+	stage('Test') {
+	    steps {
+	    	sh 'java -jar target/benchmarks.jar'
+            }
+	}
     }
 }
