@@ -12,11 +12,7 @@ pipeline {
 	stage('Test') {
 	    steps {
 	    	sh 'java -jar target/benchmarks.jar GitLsRemoteBenchmark -bm avgt -f 1 -foe true -rf json -rff result.json -tu ms'
-		publishers {
-            		jmhReport {
-                		resultPath('result.json')
-            		}
-        	}
+		jmhReport 'result.json'
             }
 	}
     }
