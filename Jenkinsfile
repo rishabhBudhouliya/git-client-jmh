@@ -11,8 +11,9 @@ pipeline {
         }
 	stage('Test') {
 	    steps {
-	    	sh 'java -jar target/benchmarks.jar'
+	    	sh 'java -jar target/benchmarks.jar GitLsRemoteBenchmark -bm avgt -f 1 -foe true -rf json -rff RedundantFetchResults.json -tu ms'
             }
 	}
+	jmhReport 'RedundantFetchResults.json'
     }
 }
