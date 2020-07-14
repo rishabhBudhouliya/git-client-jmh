@@ -89,10 +89,11 @@ public class GitFetchBenchmark {
          * Cairo: (93.54 MiB) https://github.com/cairoshell/cairoshell.git
          * Samba: (324.26 MiB) https://github.com/samba-team/samba.git
          */
-        @Param({"https://github.com/stephenc/java-logging-benchmarks.git",
-                "https://github.com/uutils/coreutils.git",
-                "https://github.com/freedesktop/cairo.git",
-                "https://github.com/samba-team/samba.git"})
+        @Param({"https://github.com/omkar-dsd/sample-base-repository.git",
+                "https://github.com/omkar-dsd/sample-10-branch.git",
+                "https://github.com/omkar-dsd/sample-100-branch.git",
+                "https://github.com/omkar-dsd/sample-1000-branch.git",
+                "https://github.com/omkar-dsd/sample-5000-branch.git"})
         String repoUrl;
 
         private File cloneUpstreamRepositoryLocally(File parentDir, String repoUrl) throws Exception {
