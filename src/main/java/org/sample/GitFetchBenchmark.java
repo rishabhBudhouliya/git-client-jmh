@@ -127,7 +127,6 @@ public class GitFetchBenchmark {
     public void gitFetchBenchmark(ClientState clientState, CloneRepoState cloneRepoState,Blackhole blackhole) throws Exception {
         FetchCommand fetch = clientState.gitClient.fetch_().from(cloneRepoState.urIish, clientState.refSpecs);
         fetch.execute();
-        System.out.println("git client dir after fetch is: " + FileUtils.sizeOfDirectory(clientState.gitDir));
         blackhole.consume(fetch);
     }
 
