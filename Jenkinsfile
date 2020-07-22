@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+  agent {label 'CentOS-8 && windows'}
     tools {
         maven 'maven-latest'
     }
