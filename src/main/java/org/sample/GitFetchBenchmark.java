@@ -90,10 +90,10 @@ public class GitFetchBenchmark {
          * Samba: (324.26 MiB) https://github.com/samba-team/samba.git
          */
         @Param({"https://github.com/omkar-dsd/sample-base-repository.git",
-                "https://github.com/omkar-dsd/sample-10-branch.git",
-                "https://github.com/omkar-dsd/sample-100-branch.git",
-                "https://github.com/omkar-dsd/sample-1000-branch.git",
-                "https://github.com/omkar-dsd/sample-5000-branch.git"})
+                "https://github.com/omkar-dsd/sample-10-commit.git",
+                "https://github.com/omkar-dsd/sample-100-commit.git",
+                "https://github.com/omkar-dsd/sample-1000-commit.git",
+                "https://github.com/omkar-dsd/sample-5000-commit.git"})
         String repoUrl;
 
         private File cloneUpstreamRepositoryLocally(File parentDir, String repoUrl) throws Exception {
