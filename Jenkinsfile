@@ -7,6 +7,7 @@ pipeline {
     axes {
 	axis {
 	     name 'os'
+	     values 'CentOS-8', 'Debian-10', 'FreeBSD-12', 'ppc64le', 's390x', 'windows'
 	     }	
 	 }
     }
