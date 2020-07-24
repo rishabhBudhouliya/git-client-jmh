@@ -93,7 +93,8 @@ public class GitFetchBenchmark {
                 "https://github.com/omkar-dsd/sample-10-commit.git",
                 "https://github.com/omkar-dsd/sample-100-commit.git",
                 "https://github.com/omkar-dsd/sample-1000-commit.git",
-                "https://github.com/omkar-dsd/sample-5000-commit.git"})
+                "https://github.com/omkar-dsd/sample-5000-commit.git",
+		"https://github.com/omkar-dsd/sample-50000-commit.git"})
         String repoUrl;
 
         private File cloneUpstreamRepositoryLocally(File parentDir, String repoUrl) throws Exception {
