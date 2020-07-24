@@ -3,14 +3,6 @@ pipeline {
     tools {
         maven 'maven-latest'
     }
-    matrix {
-    axes {
-	axis {
-	     name 'os'
-	     values 'CentOS-8', 'Debian-10', 'FreeBSD-12', 'ppc64le', 's390x', 'windows'
-	     }	
-	 }
-    }
     stages {
         stage('Build') { 
             steps {
@@ -18,6 +10,14 @@ pipeline {
             }
         }
 	stage('Test') {
+		matrix {
+    		axes {
+			axis {
+	     			name 'os'
+	     			values 'CentOS-8', 'Debian-10', 'FreeBSD-12', 'ppc64le', 's390x', 'windows'
+	     		     }	
+	 	     }
+    		}
 	    steps {
 	    	sh 'java -jar target/benchmarks.jar GitClientFetchBenchmark -bm avgt -f 2 -foe true -rf json -rff result.json -tu s'
 		jmhReport 'result.json'
