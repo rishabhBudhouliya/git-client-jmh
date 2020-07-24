@@ -4,13 +4,8 @@ pipeline {
         maven 'maven-latest'
     }
     stages {
-        stage('Build') { 
-            steps {
-                sh 'mvn -DskipTests clean install' 
-            }
-        }
-	stage('Test') {
-		matrix {
+	    stage('OS') {
+		    matrix {
     		axes {
 			axis {
 	     			name 'os'
@@ -18,6 +13,15 @@ pipeline {
 	     		     }	
 	 	     }
     		}
+	    }
+    }
+	stages {
+        stage('Build') { 
+            steps {
+                sh 'mvn -DskipTests clean install' 
+            }
+        }
+	stage('Test') {
 	    steps {
 	    	sh 'java -jar target/benchmarks.jar GitClientFetchBenchmark -bm avgt -f 2 -foe true -rf json -rff result.json -tu s'
 		jmhReport 'result.json'
