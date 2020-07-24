@@ -1,8 +1,7 @@
-package jmh.benchmark;
+package org.sample;
 
 import hudson.EnvVars;
 import hudson.model.TaskListener;
-import jenkins.benchmark.jmh.JmhBenchmark;
 import org.eclipse.jgit.transport.RefSpec;
 import org.eclipse.jgit.transport.URIish;
 import org.jenkinsci.plugins.gitclient.FetchCommand;
@@ -15,13 +14,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
 
 /**
  * A JMH micro-benchmark performance test, it aims to compare the performance of git-fetch using both "git" and "jgit"
  * implementations represented by CliGitAPIImpl and JGitAPIImpl respectively.
  */
-@JmhBenchmark
 public class GitClientFetchBenchmark {
 
     @State(Scope.Thread)
