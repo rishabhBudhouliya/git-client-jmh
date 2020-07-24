@@ -3,6 +3,13 @@ pipeline {
     tools {
         maven 'maven-latest'
     }
+    matrix {
+    axes {
+	axis {
+	     name 'os'
+	     }	
+	 }
+    }
     stages {
         stage('Build') { 
             steps {
@@ -11,7 +18,7 @@ pipeline {
         }
 	stage('Test') {
 	    steps {
-	    	sh 'java -jar target/benchmarks.jar GitFetchBenchmark -bm avgt -f 2 -foe true -rf json -rff result.json -tu ms'
+	    	sh 'java -jar target/benchmarks.jar GitClientFetchBenchmark -bm avgt -f 2 -foe true -rf json -rff result.json -tu s'
 		jmhReport 'result.json'
             }
 	}
