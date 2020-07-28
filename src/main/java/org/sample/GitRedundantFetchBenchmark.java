@@ -40,9 +40,10 @@ public class GitRedundantFetchBenchmark {
         URIish urIish;
 
         @Param({"https://github.com/jenkinsci/jenkins-charm.git",
-                "https://github.com/jenkinsci/parameterized-trigger-plugin.git",
                 "https://github.com/jenkinsci/ec2-plugin.git",
-                "https://github.com/jenkinsci/git-plugin.git"})
+                "https://github.com/jenkinsci/git-plugin.git",
+                "https://github.com/microsoft/vscode.git",
+                "https://github.com/ansible/ansible.git"})
         String repoUrl;
 
         private File cloneUpstreamRepositoryLocally(File parentDir, String repoUrl) throws Exception {
