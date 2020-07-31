@@ -82,11 +82,7 @@ public class GitClientFetchBenchmark {
          * Cairo: (93.54 MiB) https://github.com/cairoshell/cairoshell.git
          * Samba: (324.26 MiB) https://github.com/samba-team/samba.git
          */
-        @Param({"https://github.com/stephenc/java-logging-benchmarks.git",
-                "https://github.com/uutils/coreutils.git",
-                "https://github.com/freedesktop/cairo.git",
-                "https://github.com/samba-team/samba.git"})
-        String repoUrl;
+        String repoUrl="https://github.com/microsoft/vscode.git";
 
         private File cloneUpstreamRepositoryLocally(File parentDir, String repoUrl) throws Exception {
             String repoName = repoUrl.split("/")[repoUrl.split("/").length - 1];
