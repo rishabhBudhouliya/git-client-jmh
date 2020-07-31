@@ -75,7 +75,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>git-client</artifactId>
-            <version>3.1.2-SNAPSHOT</version>
+<!--            <version>3.1.2-SNAPSHOT</version>-->
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.main</groupId>
