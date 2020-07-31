@@ -121,5 +121,11 @@ public class GitClientFetchBenchmark {
         fetch.execute();
         blackhole.consume(fetch);
     }
+
+    @Benchmark
+    public void gitCloneBenchmark(ClientState gitClientState, CloneRepoState cloneRepoState, Blackhole blackhole) throws Exception {
+        LauncherForGit clone = new LauncherForGit(gitClientState.gitDir);
+        clone.launchCommand("git", "clone", cloneRepoState.urIish.toString());
+    }
 }
 
